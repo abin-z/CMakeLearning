@@ -16,6 +16,7 @@ int main(int argc, char* argv[])
     return 1;
   }
 
+  std::cout << "__cplusplus = " << __cplusplus << std::endl;
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 
