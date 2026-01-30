@@ -2,3 +2,4 @@
 // TODO 10: Define Tutorial_VERSION_MAJOR and Tutorial_VERSION_MINOR
 #define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
+#define Tutorial_VERSION_PATCH @Tutorial_VERSION_PATCH@
