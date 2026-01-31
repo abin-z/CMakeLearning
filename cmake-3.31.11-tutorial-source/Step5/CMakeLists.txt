@@ -44,9 +44,11 @@ install(TARGETS Tutorial DESTINATION bin)
 install(FILES ${PROJECT_BINARY_DIR}/TutorialConfig.h DESTINATION include)
 
 # TODO 5: Enable testing
+enable_testing()
 
 # TODO 6: Add a test called Runs which runs the following command:
 # $ Tutorial 25
+add_test(NAME Runs COMMAND Tutorial 25)
 
 # TODO 7: Add a test called Usage which runs the following command:
 # $ Tutorial
