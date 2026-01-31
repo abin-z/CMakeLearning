@@ -54,11 +54,27 @@ add_test(NAME Runs COMMAND Tutorial 25)
 # $ Tutorial
 # Make sure the expected output is displayed.
 # Hint: Use the PASS_REGULAR_EXPRESSION property with "Usage.*number"
+add_test(NAME Usage COMMAND Tutorial)
+set_tests_properties(Usage PROPERTIES PASS_REGULAR_EXPRESSION "Usage.*number")
 
 # TODO 8: Add a test which runs the following command:
 # $ Tutorial 4
 # Make sure the result is correct.
 # Hint: Use the PASS_REGULAR_EXPRESSION property with "4 is 2"
+add_test(NAME Com4 COMMAND Tutorial 4)
+set_tests_properties(Com4 PROPERTIES PASS_REGULAR_EXPRESSION "4 is 2")
 
 # TODO 9: Add more tests. Create a function called do_test to avoid copy +
 # paste. Test the following values: 4, 9, 5, 7, 25, -25 and 0.0001.
+function(do_test num result)
+  add_test(NAME Comp${num} COMMAND Tutorial ${num})
+  set_tests_properties(Comp${num} PROPERTIES PASS_REGULAR_EXPRESSION "${num} is ${result}")
+endfunction()
+
+do_test(4 2)
+do_test(9 "3")
+do_test(5 2.236)
+do_test(7 "2.645")
+do_test(25 "5")
+do_test(-25 "(-nan|nan|0)")
+do_test(0.0001 "0.01")
