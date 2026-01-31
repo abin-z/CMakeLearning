@@ -33,12 +33,15 @@ target_link_libraries(Tutorial PUBLIC MathFunctions tutorial_compiler_flags)
 target_include_directories(Tutorial PUBLIC
                            "${PROJECT_BINARY_DIR}"
                            )
+message(STATUS "install prefix = ${CMAKE_INSTALL_PREFIX}")
 
 # TODO 3: Install Tutorial in the bin directory
 # Hint: Use the TARGETS and DESTINATION parameters
+install(TARGETS Tutorial DESTINATION bin)
 
 # TODO 4: Install TutorialConfig.h to the include directory
 # Hint: Use the FILES and DESTINATION parameters
+install(FILES ${PROJECT_BINARY_DIR}/TutorialConfig.h DESTINATION include)
 
 # TODO 5: Enable testing
 
