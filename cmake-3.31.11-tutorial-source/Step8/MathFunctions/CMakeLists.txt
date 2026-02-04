@@ -1,9 +1,11 @@
 add_library(MathFunctions MathFunctions.cxx)
-include(MakeTable.cmake)
+
 # should we use our own math functions
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 if (USE_MYMATH)
   target_compile_definitions(MathFunctions PRIVATE "USE_MYMATH")
+
+  include(MakeTable.cmake)
 
   # library that just does sqrt
   add_library(SqrtLibrary STATIC
