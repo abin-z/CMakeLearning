@@ -42,6 +42,8 @@ Makefile
 install_manifest.txt
 Testing/
 install/
+debug/
+release/
 
 # Ninja 生成的文件
 build.ninja
