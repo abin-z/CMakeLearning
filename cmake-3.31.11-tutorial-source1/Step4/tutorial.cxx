@@ -16,6 +16,8 @@ int main(int argc, char* argv[])
     return 1;
   }
 
+  const int a = 10;
+
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 
